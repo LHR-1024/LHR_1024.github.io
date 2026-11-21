@@ -1,1 +1,1330 @@
-<h1>欢迎来到李赫然的主页<h1>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>李赫然 · 个人主页</title>
+<meta name="description" content="李赫然的个人主页：首页、关于我、联系我">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACy0lEQVR42r2Xv2tUQRDHP7O7d5e75Ez8hSGFoqIEURsbIYiFhYhNFCGFvaD+C6IGsUvQQgz4J4igIFrZWFgpFlaCYKUGFWNCkrskt7tj8Z5JCMnl5e5eBh6PN7zd/e7Od76zI4BMDjNactxYDOxUMORoArFk+Vv3PB54wR37/RKjfSVu1wIVBSF/kwiVviJnfx9F5McwNWsoNRQx2wOACFoQNCgLDqHs8z73NWZAvCICFQOosP32f01HlmOXDBBVWwLiMv0VNNO5dh5Auq50VzfdvdbmWgKxMQBj0flA782HlIdGIAawbiVgmh57DGAMs0/vMfd8AtNjE1/bAFTBQunkOczO/k0nKh47A88msvElEwARiLDw4RXlYhliwOw9gLhigm9hjjD9C9EIRlj69Abs1skoPy7RfEQAig4i7HnwkcL+EwDU3z1l6v5VTNVB9OiSR2weWeAEvIe4ZncaEr8PEBVx0lIqmkz5LbJObFOf2OSdqw5sGCVd9aS8MaviEHynAGTUVq/Eul/+NpXNdbYzAERQr9jdA1TPX0N27CFMfmH+9QSEBojmDMBYtO7pOj1Mz8idZffC+5f4b1+RogGNOYcAkkWChxib8GarAERAzPp+6xLSiSQiJCaV67jhjrcGICWWNkKqAyuTamOROONBfXLRmwFdnO9gGoqAV0zfbuy+gxAUKXWvDOw/TPeFK0jZJCScDxQHh1bGatsADLoU6L3+hK7TlxOh+V/9UIqDQ+y6NbTOha+R6FvGiti8Ghqw/YdWcSFDpTOF5czI8r/b7NJWe/2I0qmLCbNNhhtHKt1x+ifxzyTimlfI5tVQQOvJPbolfSq3q4QKUrGt60IGHrhUMaSdSdrsEZopdX6mqwDUnBBj5sztTGvmhAjUjMJYtYBxwrY1SE6QagGjMGbHP/P29xFMl+V4ULrIuUFN2/Op2QbjAy+4+w8aAgcpBOuefwAAAABJRU5ErkJggg==">
+<link rel="preconnect" href="https://miaoda.feishu.cn">
+<link rel="preconnect" href="https://sf3-scmcdn-cn.feishucdn.com" crossorigin>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@400;700&amp;display=swap">
+<style>
+/* ===== 基础 ===== */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --paper:      #FFF9E8;
+  --paper-2:    #FCF0D8;
+  --rule:       rgba(201, 102, 31, .12);
+  --rule-deep:  rgba(201, 102, 31, .26);
+  --ink:        #3B2E25;
+  --ink-2:      #6E5A4B;
+  --muted:      #9C8A7B;
+  --orange:     #FFA64D;
+  --clay:       #C9661F;
+  --clay-dark:  #A65217;
+  --blue:       #8FC7DE;
+  --line:       rgba(59, 46, 37, .15);
+}
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+h1, h2, .serif {
+  font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+}
+
+a { color: var(--clay); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+:focus-visible {
+  outline: 2px solid var(--clay);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+[hidden] { display: none !important; }
+
+/* ===== 页头 ===== */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  padding: 10px 18px;
+  background: var(--orange);
+  border-bottom: 1px solid rgba(166, 82, 23, .35);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #4A2A0C;
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-decoration: none;
+}
+.brand:hover { text-decoration: none; }
+
+.avatar {
+  display: block;
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+.hero-avatar {
+  display: block;
+  width: 128px;
+  height: 128px;
+  margin-bottom: 18px;
+  border-radius: 6px;
+}
+
+.nav {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.nav a {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 12px;
+  border-radius: 3px;
+  color: #4A2A0C;
+  font-size: 15px;
+  text-decoration: none;
+  transition: background-color .15s ease;
+}
+.nav a:hover { background: rgba(255, 249, 232, .38); text-decoration: none; }
+.nav a[aria-current="page"] {
+  background: var(--paper);
+  color: var(--clay-dark);
+  font-weight: 700;
+}
+
+/* ===== 开发者模式 ===== */
+.devbtn {
+  padding: 6px 12px;
+  border: 1px solid rgba(74, 42, 12, .35);
+  border-radius: 3px;
+  background: rgba(255, 249, 232, .38);
+  color: #4A2A0C;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.devbtn:hover { background: rgba(255, 249, 232, .65); }
+.devbtn[data-on="true"] {
+  background: var(--paper);
+  border-color: var(--clay-dark);
+  color: var(--clay-dark);
+  font-weight: 700;
+}
+
+.dev-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tl-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+[contenteditable="true"] {
+  outline: 1px dashed rgba(201, 102, 31, .45);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* ===== 版面 ===== */
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 26px 18px 0;
+}
+
+.view { animation: fade .18s ease-out; }
+.view[hidden] { display: none; }
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ===== 首页 ===== */
+.hero {
+  position: relative;
+  padding: 30px 22px 26px 62px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background-color: var(--paper-2);
+  background-image:
+    linear-gradient(90deg, transparent 0 42px, var(--rule-deep) 42px 43px, transparent 43px),
+    repeating-linear-gradient(180deg, transparent 0 31px, var(--rule) 31px 32px);
+}
+
+.hero-name {
+  margin: 0;
+  font-size: clamp(38px, 10vw, 54px);
+  font-weight: 700;
+  letter-spacing: .06em;
+  line-height: 1.15;
+}
+
+.hero-meta {
+  margin: 10px 0 0;
+  color: var(--ink-2);
+  font-size: 15px;
+}
+
+.hero-meta .dash { color: var(--muted); }
+
+.hero-note {
+  margin: 16px 0 0;
+  max-width: 32em;
+  color: var(--ink-2);
+  font-size: 15px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1.5px solid var(--clay);
+  border-radius: 3px;
+  background: var(--clay);
+  color: #FFF9E8;
+  font: inherit;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color .15s ease, border-color .15s ease;
+}
+.btn:hover { background: var(--clay-dark); border-color: var(--clay-dark); }
+.btn:active { transform: translateY(1px); }
+
+.btn.ghost {
+  background: transparent;
+  color: var(--clay);
+}
+.btn.ghost:hover { background: rgba(201, 102, 31, .09); }
+
+
+
+/* ===== 关于我 ===== */
+.sec-title {
+  margin: 0 0 6px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+
+.sec-lede {
+  margin: 0 0 22px;
+  color: var(--ink-2);
+  font-size: 15px;
+  max-width: 34em;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: 76px 22px minmax(0, 1fr);
+  row-gap: 24px;
+  padding: 22px 18px 22px 16px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #FFFDF6;
+}
+
+.tl-date {
+  align-self: start;
+  padding-right: 8px;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 20px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.tl-axis {
+  position: relative;
+  justify-self: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 20px;
+}
+
+.tl-axis::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: -34px;
+  left: 50%;
+  width: 1.5px;
+  margin-left: -.75px;
+  background: var(--rule-deep);
+}
+
+.tl-axis .dot {
+  position: relative;
+  z-index: 1;
+  width: 9px;
+  height: 9px;
+  margin-top: 5px;
+  border-radius: 50%;
+  background: var(--clay);
+  box-shadow: 0 0 0 3px var(--paper-2);
+}
+
+.timeline > .tl-axis:last-of-type::before { display: none; }
+
+.tl-main { min-width: 0; }
+
+.tl-title {
+  margin: 0;
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.tl-desc {
+  margin: 6px 0 0;
+  color: var(--ink-2);
+  font-size: 14.5px;
+}
+
+.tl-desc .muted { color: var(--muted); }
+
+/* ===== 联系我 ===== */
+.cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+}
+
+.card {
+  padding: 18px 18px 16px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #FFFDF6;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--ink-2);
+  font-size: 14px;
+}
+
+.card-head svg { flex: none; width: 18px; height: 18px; stroke: var(--clay); }
+
+.card-value {
+  display: block;
+  margin-top: 8px;
+  color: var(--ink);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+.card-value:hover { color: var(--clay); text-decoration: none; }
+
+.card-actions { margin-top: 12px; }
+
+/* ===== 页脚 ===== */
+.footer {
+  max-width: 720px;
+  margin: 34px auto 0;
+  padding: 16px 18px 28px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+/* ===== 提示条 ===== */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 26px;
+  z-index: 40;
+  transform: translate(-50%, 12px);
+  padding: 10px 18px;
+  border-radius: 3px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* ===== 点击涟漪 ===== */
+.ripple {
+  position: fixed;
+  z-index: 30;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(143, 199, 222, .35);
+  pointer-events: none;
+  animation: rippleOut .65s ease-out forwards;
+}
+
+@keyframes rippleOut {
+  0%   { transform: scale(.2); opacity: .75; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
+/* ===== 宽屏 ===== */
+@media (min-width: 560px) {
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero { padding: 38px 34px 32px 74px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .view, .ripple, .toast { animation: none !important; transition: none !important; }
+  .ripple { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#home">
+    <img class="avatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEt0lEQVR42u2bTWhcVRTHf+fcN19JWtra2iZRKfiBxZUVqYjWhSIiIk2tiCK2K6EgQhfiqnQh4kKoS6WrtgtBqG2xCzfdCG6kaHFhQRT8qKaVYr/SaTJ5797j4s44SUzTNjMZJzPvwCMzkzfDPf97zv/+z7nvioEIGMBfY+xIlN1p4JEAKwGhN8yccMUJ300HPh45xhEAAxHbh/5whmSt50DFsTMY1AIEo6dMBUoa/05mHFy/jjcZxgvAn9s4NDzAG+eu4wERQelBMyMANjKAG5/k0Ogxdsn4NrYPFfh8IiMTSOgPywYTkmueMQ3CHm8Y1puzPn8oIMEwAnsSgYdrARHpGcK7uQmuFgDYrAKDvUZ4t2IhLn9DSp9bDkAOQA5ADkBfW/uUn7RJRpgtMwBE4qB9GwYugCpYWCYACFhqiIKUK7HAbEVQWiBUa0ihc4X44gEQxVIjWX8Pq9/5DF0z0loqhDjrU6e+4MonbyMF6UgkLB4AVWwyo7L1FQoPbGnbgAaff4vqif1kf/yCFJc+HbTVFNBVGyB4yKbjYFu5ggcLuFUbIGsjsS4pCTZY22w2g4ve2AEL87B9nUwbpCrLgQQN/N9nQV28boM/5ncwBqS/OA6uM0vi4gEIHh0QJr/6lOKmJ3Fr746IiII33Oh96ODqOStDfJ2d/5lw9RLiGu3YRvQYU6dOkJ37HSl2hgRlfAxrhQPIwFKgUPfPgV2DO947Qvmxl2JeN6Kj/vrSBy9SPXkCXQn4Gb9lQApSWS5CyIBEkMIMtlYHBR8j4YbUW0AKgiQO1M/+X1EjUMtGCZqB+Tnv7ebImc1/r3XO+bwYygHIAcgByBsiXT9CkSgSZmqpNgqk7gZAFXzAUuNfuaZElciMz3oSAAG7HtAVZZKRu5DyEBYCVr1Edv5s1FmOlkHoTgDUYZOegWdeY8Xr7+PWjEJSiBkwPUXt+5Nc/vBVLK3WU2PxKHQnCdbL4aHt7+Lu3AiuWWlKsUz50RdINj6I1SymSe+lgIGCpbVms6RRW4RAy73HZUOCItHxWY0WWbjQynVADkAOQA5Ax0lQXbMDrA6cLNzSVl24kSoC2j6mX3IArOqbjRzNsCpYOn3j+ycnCBMexDd7gnNVYAqErNsBEPBGacvTsStsFme1FkiG751RzDRujxk39PJeKlt3QrKAlg2GG7l/1ve6CwB1WNVTfvw51uz9cgGMdE5lB8VNT8Cm260Iuw0AESyD4kNPxZlPa+CS+XnhP7Prm7s/Nn9gYTf5ja5IAYnaHCE675Jbjp6Wa4WuAMAaet3ALz1hxcgwcIWWi6DWdYAZksD0ma9jnhfLzShYqksTcAVC9TL+/G/QhmcIWtsaQyAYpc3PxgckbKnX7riRkv70DemvP9b3D+3/BKCxrnd2Q0eKICVpCxe0RQjJoEOkgw+bh9C2xmh7pHDo7H5eXgzlAOQA5ADkALQLADOuqfSh49HnCRXhdEkxDN833hu+pJgZp9WE/SoIQv+cHRNMBUH5SEePcnwi5fBwhcQMXz9e2psTbwQz/HCFZCLl8OhRjovtQzmHu3CBA6WEXf1weLqWcXBd4/D0zOPz42PsKCq7sx48Pq9wNVG+nXt8/h+zLelE9jlnLwAAAABJRU5ErkJggg==" alt="李赫然的头像" width="26" height="26">
+    <span>LHR_Web</span>
+  </a>
+  <button class="devbtn" type="button" id="dev-toggle" data-on="false">开发者模式</button>
+  <nav class="nav" aria-label="页面导航">
+    <a href="#home" id="nav-home">首页</a>
+    <a href="#about" id="nav-about">关于我</a>
+    <a href="#contact" id="nav-contact">联系我</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <!-- ===== 视图：首页 ===== -->
+  <section class="view" id="home">
+    <div class="hero">
+    <img class="hero-avatar" src="data:image/png;base64,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" alt="李赫然的头像" width="128" height="128">
+      <h1 class="hero-name">李赫然</h1>
+      <p class="hero-meta">2014.7.22 <span class="dash">—</span> ?</p>
+      <p class="hero-note">时间轴上空余的部分 由我自己来书写</p>
+      <div class="hero-actions">
+        <a class="btn ghost" href="#about">看看我的经历</a>
+      </div>
+    </div>
+      </div>
+      <ul class="notes-list" id="notes-list"></ul>
+    </div>
+  </section>
+
+  <!-- ===== 视图：关于我 ===== -->
+  <section class="view" id="about" hidden>
+    <h2 class="sec-title">关于我</h2>
+    <p class="sec-lede">我的人生时间轴</p>
+
+    <div class="timeline" role="list" id="timeline"></div>
+
+    <div class="tl-tools" id="tl-tools" hidden>
+      <button class="btn ghost" type="button" id="add-tl">＋ 添加一段</button>
+      <span class="notes-hint">改动会自动存在本机</span>
+    </div>
+
+  </section>
+
+  <!-- ===== 视图：联系我 ===== -->
+  <section class="view" id=scontact" hidden>
+    <h2 class="sec-title">联系我</h2>
+    <p class="sec-lede">尽量不要打电话 若要联系我请用邮箱</p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6.5 3.5h3l1.5 4-2 1.6a11 11 0 0 0 5.4 5.4L16 12.5l4 1.5v3a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z"/>
+          </svg>
+          <span>电话</span>
+        </div>
+        <a class="card-value" id="contact-phone" href="tel:18561712310">185 6171 2310</a>
+        <div class="card-actions">
+          <button class="btn ghost" type="button" data-copy="18561712310">复制号码</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5.5" width="18" height="13" rx="1.5"/>
+            <path d="m3.8 6.8 8.2 6 8.2-6"/>
+          </svg>
+          <span>邮箱</span>
+        </div>
+        <a class="card-value" id="contact-email" href="mailto:18561712310@163.com">18561712310@163.com</a>
+        <div class="card-actions">
+          <button class="btn ghost" type="button" data-copy="18561712310@163.com">复制邮箱</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <span>© LHR_Web</span>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- 视图切换 ---------- */
+  var views = { home: null, about: null, contact: null };
+  Object.keys(views).forEach(function (key) {
+    views[key] = document.getElementById(key);
+  });
+
+  function currentKey() {
+    var key = (location.hash || '#home').replace('#', '');
+    return views[key] ? key : 'home';
+  }
+
+  function render() {
+    var key = currentKey();
+    Object.keys(views).forEach(function (name) {
+      var on = name === key;
+      views[name].hidden = !on;
+      var link = document.getElementById('nav-' + name);
+      if (on) { link.setAttribute('aria-current', 'page'); }
+      else { link.removeAttribute('aria-current'); }
+    });
+    window.scrollTo(0, 0);
+  }
+
+  window.addEventListener('hashchange', render);
+  render();
+
+  /* ---------- 页面内容与开发者模式 ---------- */
+  var CONTENT_KEY = 'lhr.content.v1';
+  var DEV_PASSWORD = 'LHR_Web';
+  var devMode = false;
+
+  var DEFAULT_CONTENT = {
+    hero: {
+      name: '李赫然',
+      meta: '2014.7.22 — ?',
+      note: '时间轴上空余的部分 由我自己来书写'
+    },
+    timeline: [
+      { date: '2014.7.22', title: '故事的起点', desc: '档案从这一天记起，后面接着写。', href: '' },
+      { date: '小学', title: '青岛上清路小学', desc: '六年，从认字算起。',
+        href: 'https://baike.baidu.com/item/%E9%9D%92%E5%B2%9B%E4%B8%8A%E6%B8%85%E8%B7%AF%E5%B0%8F%E5%AD%A6/10951173' },
+      { date: '初中', title: '青岛第三十七中学', desc: '现在在这里。',
+        href: 'https://baike.baidu.com/item/%E5%B1%B1%E4%B8%9C%E7%9C%81%E9%9D%92%E5%B2%9B%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%83%E4%B8%AD%E5%AD%A6/49824109' },
+      { date: '?', title: '未完待续', desc: '还没发生的事，不提前写。', href: '' }
+    ],
+    contact: { phone: '18561712310', phoneText: '185 6171 2310', email: '18561712310@163.com' }
+  };
+
+  function cloneObj(o) { return JSON.parse(JSON.stringify(o)); }
+
+  function readContent() {
+    var base = cloneObj(DEFAULT_CONTENT);
+    try {
+      var raw = localStorage.getItem(CONTENT_KEY);
+      if (!raw) { return base; }
+      var saved = JSON.parse(raw);
+      if (saved && saved.hero) {
+        if (typeof saved.hero.name === 'string') { base.hero.name = saved.hero.name; }
+        if (typeof saved.hero.meta === 'string') { base.hero.meta = saved.hero.meta; }
+        if (typeof saved.hero.note === 'string') { base.hero.note = saved.hero.note; }
+      }
+      if (saved && Array.isArray(saved.timeline)) {
+        base.timeline = saved.timeline.map(function (t) {
+          return {
+            date: String(t.date || ''),
+            title: String(t.title || ''),
+            desc: String(t.desc || ''),
+            href: String(t.href || '')
+          };
+        });
+      }
+      if (saved && saved.contact) {
+        if (typeof saved.contact.phone === 'string') { base.contact.phone = saved.contact.phone; }
+        if (typeof saved.contact.phoneText === 'string') { base.contact.phoneText = saved.contact.phoneText; }
+        if (typeof saved.contact.email === 'string') { base.contact.email = saved.contact.email; }
+      }
+    } catch (err) { /* 读不到就用默认内容 */ }
+    return base;
+  }
+
+  function saveContent() {
+    try { localStorage.setItem(CONTENT_KEY, JSON.stringify(content)); } catch (err) {}
+  }
+
+  var content = readContent();
+
+  var heroName = document.querySelector('.hero-name');
+  var heroMeta = document.querySelector('.hero-meta');
+  var heroNote = document.querySelector('.hero-note');
+  var tlWrap = document.getElementById('timeline');
+  var tlTools = document.getElementById('tl-tools');
+  var cPhone = document.getElementById('contact-phone');
+  var cEmail = document.getElementById('contact-email');
+  var bindRow = document.getElementById('bind-row');
+  var bindHint = document.getElementById('bind-state');
+  var devBtn = document.getElementById('dev-toggle');
+
+  function editField(el, apply) {
+    if (!el) { return; }
+    el.addEventListener('blur', function () {
+      if (!devMode) { return; }
+      apply();
+      saveContent();
+    });
+    el.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); el.blur(); }
+    });
+  }
+
+  function renderTimeline() {
+    tlWrap.textContent = '';
+
+    content.timeline.forEach(function (item) {
+      var date = document.createElement('div');
+      date.className = 'tl-date';
+      date.textContent = item.date;
+
+      var axis = document.createElement('div');
+      axis.className = 'tl-axis';
+      axis.setAttribute('aria-hidden', 'true');
+      var dot = document.createElement('span');
+      dot.className = 'dot';
+      axis.appendChild(dot);
+
+      var main = document.createElement('div');
+      main.className = 'tl-main';
+
+      var title = document.createElement('p');
+      title.className = 'tl-title';
+      if (item.href) {
+        var link = document.createElement('a');
+        link.href = item.href;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = item.title;
+        title.appendChild(link);
+      } else {
+        title.textContent = item.title;
+      }
+
+      var desc = document.createElement('p');
+      desc.className = 'tl-desc';
+      desc.textContent = item.desc;
+
+      main.appendChild(title);
+      main.appendChild(desc);
+
+      if (devMode) {
+        date.setAttribute('contenteditable', 'true');
+        title.setAttribute('contenteditable', 'true');
+        desc.setAttribute('contenteditable', 'true');
+
+        editField(date, function () { item.date = date.textContent.trim(); });
+        editField(title, function () {
+          item.title = title.textContent.trim();
+          if (item.href) { title.textContent = item.title; renderTimeline(); }
+        });
+        editField(desc, function () { item.desc = desc.textContent.trim(); });
+
+        var row = document.createElement('div');
+        row.className = 'dev-row';
+
+        var linkBtn = document.createElement('button');
+        linkBtn.type = 'button';
+        linkBtn.className = 'linkbtn';
+        linkBtn.textContent = item.href ? '改链接' : '加链接';
+        linkBtn.addEventListener('click', function () {
+          var url = prompt('这一段要链接到哪里？留空表示不要链接。', item.href || '');
+          if (url === null) { return; }
+          item.href = url.trim();
+          saveContent();
+          renderTimeline();
+        });
+        row.appendChild(linkBtn);
+
+        var delBtn = document.createElement('button');
+        delBtn.type = 'button';
+        delBtn.className = 'linkbtn';
+        delBtn.textContent = '删除这一段';
+        delBtn.addEventListener('click', function () {
+          var at = content.timeline.indexOf(item);
+          if (at < 0) { return; }
+          content.timeline.splice(at, 1);
+          saveContent();
+          renderTimeline();
+        });
+        row.appendChild(delBtn);
+
+        main.appendChild(row);
+      }
+
+      tlWrap.appendChild(date);
+      tlWrap.appendChild(axis);
+      tlWrap.appendChild(main);
+    });
+  }
+
+  function renderPage() {
+    heroName.textContent = content.hero.name;
+    heroMeta.textContent = content.hero.meta;
+    heroNote.textContent = content.hero.note;
+
+    cPhone.textContent = content.contact.phoneText;
+    cPhone.href = 'tel:' + content.contact.phone;
+    cEmail.textContent = content.contact.email;
+    cEmail.href = 'mailto:' + content.contact.email;
+
+    renderTimeline();
+
+    [heroName, heroMeta, heroNote, cPhone, cEmail].forEach(function (el) {
+      el.setAttribute('contenteditable', devMode ? 'true' : 'false');
+    });
+
+    tlTools.hidden = !devMode;
+    if (bindRow) { bindRow.hidden = !devMode; }
+    if (bindHint) { bindHint.hidden = !devMode; }
+  }
+
+  function paintDevBtn() {
+    devBtn.textContent = devMode ? '退出开发者模式' : '开发者模式';
+    devBtn.setAttribute('data-on', devMode ? 'true' : 'false');
+  }
+
+  devBtn.addEventListener('click', function () {
+    if (devMode) {
+      devMode = false;
+      paintDevBtn();
+      renderPage();
+      showToast('已退出开发者模式');
+      return;
+    }
+    var pwd = prompt('请输入密码：');
+    if (pwd === null) { return; }
+    if (pwd !== DEV_PASSWORD) {
+      showToast('密码不对');
+      return;
+    }
+    devMode = true;
+    paintDevBtn();
+    renderPage();
+    showToast('开发者模式已开启，可以直接改页面内容');
+  });
+
+  document.getElementById('add-tl').addEventListener('click', function () {
+    if (!devMode) { return; }
+    content.timeline.push({ date: '某一年', title: '新的一段', desc: '', href: '' });
+    saveContent();
+    renderTimeline();
+  });
+
+  editField(heroName, function () { content.hero.name = heroName.textContent.trim(); });
+  editField(heroMeta, function () { content.hero.meta = heroMeta.textContent.trim(); });
+  editField(heroNote, function () { content.hero.note = heroNote.textContent.trim(); });
+  editField(cPhone, function () {
+    var text = cPhone.textContent.trim();
+    content.contact.phoneText = text;
+    content.contact.phone = text.replace(/[^0-9+]/g, '');
+    cPhone.href = 'tel:' + content.contact.phone;
+  });
+  editField(cEmail, function () {
+    content.contact.email = cEmail.textContent.trim();
+    cEmail.href = 'mailto:' + content.contact.email;
+  });
+
+  paintDevBtn();
+  renderPage();
+
+  /* ---------- 提示条 ---------- */
+  var toast = document.getElementById('toast');
+  var toastTimer = null;
+
+  function showToast(text) {
+    toast.textContent = text;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 1800);
+  }
+
+  /* ---------- 留言板 ---------- */
+  var KEY = 'lhr.notes.v1';
+  var memory = [];
+  var panel = document.getElementById('notes');
+  var input = document.getElementById('note-input');
+  var list = document.getElementById('notes-list');
+  var openBtn = document.getElementById('open-notes');
+
+  function readNotes() {
+    try {
+      var raw = localStorage.getItem(KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch (err) {
+      return memory.slice();
+    }
+  }
+
+  function writeNotes(items) {
+    memory = items.slice();
+    try {
+      localStorage.setItem(KEY, JSON.stringify(items));
+      return true;
+    } catch (err) {
+      return false;
+    }
+  }
+
+  function stamp(ms) {
+    var d = new Date(ms);
+    var pad = function (n) { return n < 10 ? '0' + n : String(n); };
+    return d.getFullYear() + '.' + pad(d.getMonth() + 1) + '.' + pad(d.getDate()) +
+           ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
+  }
+
+  function drawNotes() {
+    var items = readNotes().filter(function (n) { return !n.deleted; });
+    list.textContent = '';
+
+    if (!items.length) {
+      var empty = document.createElement('p');
+      empty.className = 'notes-empty';
+      empty.textContent = '还没有留言，写第一句吧。';
+      list.appendChild(empty);
+      return;
+    }
+
+    items.slice().reverse().forEach(function (item) {
+      var li = document.createElement('li');
+
+      var body = document.createElement('p');
+      body.className = 'notes-body';
+      body.textContent = item.text;
+
+      var foot = document.createElement('div');
+      foot.className = 'notes-foot';
+
+      var time = document.createElement('span');
+      time.className = 'notes-time';
+      time.textContent = stamp(item.at);
+
+      var del = document.createElement('button');
+      del.className = 'linkbtn';
+      del.type = 'button';
+      del.textContent = '删除';
+      del.addEventListener('click', function () {
+        var all = readNotes();
+        var target = all.filter(function (n) { return n.id === item.id; })[0];
+        if (!target) { return; }
+        target.deleted = true;
+        target.deletedAt = Date.now();
+        writeNotes(all);
+        drawNotes();
+        syncBound(all);
+        showToast('已删除');
+      });
+
+      foot.appendChild(time);
+      foot.appendChild(del);
+      li.appendChild(body);
+      li.appendChild(foot);
+      list.appendChild(li);
+    });
+  }
+
+  openBtn.addEventListener('click', function () {
+    panel.hidden = !panel.hidden;
+    if (!panel.hidden) {
+      input.focus();
+      openBtn.textContent = '收起留言板';
+    } else {
+      openBtn.textContent = '给我留言';
+    }
+  });
+
+  document.getElementById('save-note').addEventListener('click', function () {
+    var text = input.value.trim();
+    if (!text) {
+      input.focus();
+      showToast('先写点什么');
+      return;
+    }
+    var items = readNotes();
+    items.push({ id: String(Date.now()) + Math.random().toString(16).slice(2, 6), text: text, at: Date.now() });
+    writeNotes(items);
+    input.value = '';
+    drawNotes();
+    syncBound(items);
+    showToast('留好了，谢谢');
+  });
+
+  drawNotes();
+
+  /* ---------- 导出为 Word 文档 ---------- */
+  var CRC_TABLE = (function () {
+    var t = new Uint32Array(256);
+    for (var n = 0; n < 256; n++) {
+      var c = n;
+      for (var k = 0; k < 8; k++) { c = (c & 1) ? (0xEDB88320 ^ (c >>> 1)) : (c >>> 1); }
+      t[n] = c >>> 0;
+    }
+    return t;
+  })();
+
+  function crc32(buf) {
+    var c = 0xFFFFFFFF;
+    for (var i = 0; i < buf.length; i++) { c = CRC_TABLE[(c ^ buf[i]) & 0xFF] ^ (c >>> 8); }
+    return (c ^ 0xFFFFFFFF) >>> 0;
+  }
+
+  function makeZip(files) {
+    var chunks = [];
+    var central = [];
+    var offset = 0;
+
+    files.forEach(function (f) {
+      var name = new TextEncoder().encode(f.name);
+      var data = f.data;
+      var crc = crc32(data);
+
+      var lh = new Uint8Array(30 + name.length);
+      var lv = new DataView(lh.buffer);
+      lv.setUint32(0, 0x04034b50, true);
+      lv.setUint16(4, 20, true);
+      lv.setUint16(6, 0x0800, true);
+      lv.setUint16(8, 0, true);
+      lv.setUint16(10, 0, true);
+      lv.setUint16(12, 0x21, true);
+      lv.setUint32(14, crc, true);
+      lv.setUint32(18, data.length, true);
+      lv.setUint32(22, data.length, true);
+      lv.setUint16(26, name.length, true);
+      lv.setUint16(28, 0, true);
+      lh.set(name, 30);
+      chunks.push(lh, data);
+
+      var ch = new Uint8Array(46 + name.length);
+      var cv = new DataView(ch.buffer);
+      cv.setUint32(0, 0x02014b50, true);
+      cv.setUint16(4, 20, true);
+      cv.setUint16(6, 20, true);
+      cv.setUint16(8, 0x0800, true);
+      cv.setUint16(10, 0, true);
+      cv.setUint16(12, 0, true);
+      cv.setUint16(14, 0x21, true);
+      cv.setUint32(16, crc, true);
+      cv.setUint32(20, data.length, true);
+      cv.setUint32(24, data.length, true);
+      cv.setUint16(28, name.length, true);
+      cv.setUint16(30, 0, true);
+      cv.setUint16(32, 0, true);
+      cv.setUint16(34, 0, true);
+      cv.setUint16(36, 0, true);
+      cv.setUint32(38, 0, true);
+      cv.setUint32(42, offset, true);
+      ch.set(name, 46);
+      central.push(ch);
+
+      offset += lh.length + data.length;
+    });
+
+    var cdSize = central.reduce(function (s, c) { return s + c.length; }, 0);
+    var end = new Uint8Array(22);
+    var ev = new DataView(end.buffer);
+    ev.setUint32(0, 0x06054b50, true);
+    ev.setUint16(4, 0, true);
+    ev.setUint16(6, 0, true);
+    ev.setUint16(8, files.length, true);
+    ev.setUint16(10, files.length, true);
+    ev.setUint32(12, cdSize, true);
+    ev.setUint32(16, offset, true);
+    ev.setUint16(20, 0, true);
+
+    var all = chunks.concat(central, [end]);
+    var total = all.reduce(function (s, p) { return s + p.length; }, 0);
+    var out = new Uint8Array(total);
+    var pos = 0;
+    all.forEach(function (p) { out.set(p, pos); pos += p.length; });
+    return out;
+  }
+
+  function xmlEsc(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function docRun(text, opt) {
+    opt = opt || {};
+    var rpr = '<w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:eastAsia="' +
+      (opt.font || '宋体') + '"/>' +
+      (opt.bold ? '<w:b/>' : '') +
+      (opt.strike ? '<w:strike/>' : '') +
+      '<w:color w:val="' + (opt.color || '333333') + '"/>' +
+      '<w:sz w:val="' + (opt.size || 24) + '"/></w:rPr>';
+    return '<w:r>' + rpr + '<w:t xml:space="preserve">' + xmlEsc(text) + '</w:t></w:r>';
+  }
+
+  function docPara(runsXml, opt) {
+    opt = opt || {};
+    var ppr = '<w:pPr>' +
+      (opt.align ? '<w:jc w:val="' + opt.align + '"/>' : '') +
+      '<w:spacing w:before="' + (opt.before || 0) + '" w:after="' + (opt.after || 0) +
+      '" w:line="320" w:lineRule="auto"/>' +
+      (opt.indent ? '<w:ind w:left="' + opt.indent + '"/>' : '') +
+      (opt.border ? '<w:pBdr><w:bottom w:val="single" w:sz="6" w:space="6" w:color="C9661F"/></w:pBdr>' : '') +
+      '</w:pPr>';
+    return '<w:p>' + ppr + runsXml + '</w:p>';
+  }
+
+  function buildDocx(opts) {
+    var title = opts.title || '留言记录';
+    var owner = opts.owner || '';
+    var when = opts.when || '';
+    var items = opts.items || [];
+
+    var goneCount = items.filter(function (n) { return n.deleted; }).length;
+
+    var body = '';
+    body += docPara(docRun(title, { size: 44, bold: true, color: '3B2E25', font: '黑体' }), { after: 120 });
+    body += docPara(
+      docRun(owner, { size: 20, color: '9C8A7B' }) +
+      docRun('　导出时间 ' + when, { size: 20, color: '9C8A7B' }) +
+      docRun('　共 ' + items.length + ' 条' +
+        (goneCount ? '（其中已删除 ' + goneCount + ' 条）' : ''), { size: 20, color: '9C8A7B' }),
+      { after: 240, border: true }
+    );
+
+    items.forEach(function (item, i) {
+      var no = ('0' + (i + 1)).slice(-2);
+      var isGone = !!item.deleted;
+      body += docPara(
+        docRun(no, { size: 20, color: isGone ? '9C8A7B' : 'C9661F', bold: true }) +
+        docRun('　' + (item.time || ''), { size: 20, color: '9C8A7B' }) +
+        (isGone ? docRun('　已删除' + (item.deletedAt ? ' ' + item.deletedAt : ''),
+                  { size: 20, color: 'A65217' }) : ''),
+        { before: 240, after: 60 }
+      );
+      String(item.text).split(/\r?\n/).forEach(function (line) {
+        body += docPara(docRun(line || ' ', {
+          size: 24,
+          color: isGone ? '9C8A7B' : '3B2E25',
+          strike: isGone
+        }), { indent: 240 });
+      });
+    });
+
+    var sect = '<w:sectPr><w:pgSz w:w="11906" w:h="16838"/>' +
+      '<w:pgMar w:top="1440" w:right="1304" w:bottom="1440" w:left="1304" w:header="851" w:footer="992" w:gutter="0"/>' +
+      '<w:docGrid w:linePitch="312"/></w:sectPr>';
+
+    var doc = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' +
+      '<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" ' +
+      'xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">' +
+      '<w:body>' + body + sect + '</w:body></w:document>';
+
+    var styles = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' +
+      '<w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">' +
+      '<w:docDefaults><w:rPrDefault><w:rPr>' +
+      '<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:eastAsia="宋体" w:cs="Times New Roman"/>' +
+      '<w:sz w:val="24"/><w:szCs w:val="24"/>' +
+      '</w:rPr></w:rPrDefault><w:pPrDefault><w:pPr><w:spacing w:line="320" w:lineRule="auto"/></w:pPr></w:pPrDefault></w:docDefaults>' +
+      '<w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/><w:qFormat/></w:style>' +
+      '</w:styles>';
+
+    var contentTypes = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' +
+      '<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">' +
+      '<Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>' +
+      '<Default Extension="xml" ContentType="application/xml"/>' +
+      '<Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>' +
+      '<Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/>' +
+      '</Types>';
+
+    var rootRels = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' +
+      '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">' +
+      '<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>' +
+      '</Relationships>';
+
+    var docRels = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' +
+      '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">' +
+      '<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>' +
+      '</Relationships>';
+
+    var enc = function (s) { return new TextEncoder().encode(s); };
+
+    return makeZip([
+      { name: '[Content_Types].xml', data: enc(contentTypes) },
+      { name: '_rels/.rels', data: enc(rootRels) },
+      { name: 'word/document.xml', data: enc(doc) },
+      { name: 'word/_rels/document.xml.rels', data: enc(docRels) },
+      { name: 'word/styles.xml', data: enc(styles) }
+    ]);
+  }
+
+  function fileStamp() {
+    var d = new Date();
+    var pad = function (n) { return n < 10 ? '0' + n : String(n); };
+    return d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate()) + '_' + pad(d.getHours()) + pad(d.getMinutes());
+  }
+
+  document.getElementById('export-doc').addEventListener('click', function () {
+    var items = readNotes().sort(function (a, b) { return a.at - b.at; });
+    if (!items.length) {
+      showToast('还没有留言，先写一条吧');
+      return;
+    }
+
+    var doc = buildDocx({
+      title: '留言记录',
+      owner: '李赫然 · LHR_Web',
+      when: stamp(Date.now()),
+      items: items.map(function (n) {
+        return {
+          text: n.text,
+          time: stamp(n.at),
+          deleted: !!n.deleted,
+          deletedAt: n.deleted ? stamp(n.deletedAt || n.at) : ''
+        };
+      })
+    });
+
+    var blob = new Blob([doc], {
+      type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    });
+    var url = URL.createObjectURL(blob);
+    var link = document.createElement('a');
+    link.href = url;
+    link.download = '留言记录_' + fileStamp() + '.docx';
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+
+    showToast('已导出 ' + items.length + ' 条留言');
+  });
+
+  /* ---------- 绑定一个固定文件，自动写入 ---------- */
+  var DOCX_TYPE = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+  var bindBtn = document.getElementById('bind-file');
+  var bindState = document.getElementById('bind-state');
+  var hasPicker = typeof window.showSaveFilePicker === 'function';
+  var boundHandle = null;
+
+  function idb() {
+    return new Promise(function (resolve, reject) {
+      var req = indexedDB.open('lhr-web', 1);
+      req.onupgradeneeded = function () { req.result.createObjectStore('handles'); };
+      req.onsuccess = function () { resolve(req.result); };
+      req.onerror = function () { reject(req.error); };
+    });
+  }
+
+  function idbGet(key) {
+    return idb().then(function (db) {
+      return new Promise(function (resolve, reject) {
+        var t = db.transaction('handles', 'readonly').objectStore('handles').get(key);
+        t.onsuccess = function () { resolve(t.result || null); };
+        t.onerror = function () { reject(t.error); };
+      });
+    });
+  }
+
+  function idbSet(key, value) {
+    return idb().then(function (db) {
+      return new Promise(function (resolve, reject) {
+        var t = db.transaction('handles', 'readwrite').objectStore('handles').put(value, key);
+        t.onsuccess = function () { resolve(true); };
+        t.onerror = function () { reject(t.error); };
+      });
+    });
+  }
+
+  function docFor(items) {
+    return buildDocx({
+      title: '留言记录',
+      owner: '李赫然 · LHR_Web',
+      when: stamp(Date.now()),
+      items: items.slice().sort(function (a, b) { return a.at - b.at; })
+                  .map(function (n) {
+                    return {
+                      text: n.text,
+                      time: stamp(n.at),
+                      deleted: !!n.deleted,
+                      deletedAt: n.deleted ? stamp(n.deletedAt || n.at) : ''
+                    };
+                  })
+    });
+  }
+
+  function paintBind() {
+    if (!hasPicker) {
+      bindState.textContent = '当前浏览器不支持自动写入；用 Chrome 或 Edge 桌面版打开这个文件，就能绑定一个 Word 文档。';
+      bindBtn.textContent = '绑定文件';
+      return;
+    }
+    bindBtn.hidden = false;
+    if (boundHandle) {
+      bindState.textContent = '已绑定：' + boundHandle.name + '　每次保存都会自动写进去。';
+      bindBtn.textContent = '更换文件';
+    } else {
+      bindState.textContent = '留言暂存在本机；绑定一个 Word 文件后，每次保存都会写进那个文件。';
+      bindBtn.textContent = '绑定文件';
+    }
+  }
+
+  async function ensurePerm(handle) {
+    var opts = { mode: 'readwrite' };
+    if ((await handle.queryPermission(opts)) === 'granted') { return true; }
+    return (await handle.requestPermission(opts)) === 'granted';
+  }
+
+  async function syncBound(items, quiet) {
+    if (!boundHandle) { return; }
+    try {
+      if (!(await ensurePerm(boundHandle))) {
+        showToast('没有写入权限，点「更换文件」重新授权');
+        return;
+      }
+      var stream = await boundHandle.createWritable();
+      await stream.write(new Blob([docFor(items)], { type: DOCX_TYPE }));
+      await stream.close();
+      if (!quiet) { showToast('已写入 ' + boundHandle.name); }
+    } catch (err) {
+      showToast('写入失败：如果这个文件正在 Word 里打开，先关掉再试');
+    }
+  }
+
+  bindBtn.addEventListener('click', async function () {
+      if (!hasPicker) {
+        showToast('当前浏览器不支持，请用 Chrome 打开这个文件');
+        return;
+      }
+      try {
+        var handle = await window.showSaveFilePicker({
+          suggestedName: '留言记录.docx',
+          types: [{
+            description: 'Word 文档',
+            accept: { 'application/vnd.openxmlformats-officedocument.wordprocessingml.document': ['.docx'] }
+          }]
+        });
+        boundHandle = handle;
+        await idbSet('doc', handle);
+        await syncBound(readNotes());
+        paintBind();
+        showToast('已绑定，之后会自动写入');
+      } catch (err) {
+        if (err && err.name === 'AbortError') { return; }
+        showToast('没能绑定这个文件，换个位置再试');
+      }
+  });
+
+  if (hasPicker) {
+    idbGet('doc').then(function (handle) {
+      if (handle) { boundHandle = handle; }
+      paintBind();
+    }).catch(function () { paintBind(); });
+  } else {
+    paintBind();
+  }
+
+  /* ---------- 复制 ---------- */
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () {
+        showToast('已复制');
+      }).catch(fallbackCopy);
+    } else {
+      fallbackCopy();
+    }
+
+    function fallbackCopy() {
+      var box = document.createElement('textarea');
+      box.value = text;
+      box.style.position = 'fixed';
+      box.style.opacity = '0';
+      document.body.appendChild(box);
+      box.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (err) { ok = false; }
+      document.body.removeChild(box);
+      showToast(ok ? '已复制' : '复制失败，手动选一下吧');
+    }
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'), function (btn) {
+    btn.addEventListener('click', function () {
+      copyText(btn.getAttribute('data-copy'));
+    });
+  });
+
+  /* ---------- 点击涟漪 ---------- */
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  document.addEventListener('pointerdown', function (e) {
+    if (calm.matches) { return; }
+    var size = 40;
+    var dot = document.createElement('div');
+    dot.className = 'ripple';
+    dot.style.left = (e.clientX - size / 2) + 'px';
+    dot.style.top = (e.clientY - size / 2) + 'px';
+    document.body.appendChild(dot);
+    setTimeout(function () { dot.remove(); }, 650);
+  });
+})();
+</script>
+</body>
+</html>
